@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eagle Arena |  اختبار الإدارة</title>
+    <title>Eagle Arena | اختبار الإدارة</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -101,7 +101,7 @@
         const WEBHOOK_URL = "https://discord.com/api/webhooks/1571101758938415124/hYBuyD_mM6KV3f-qiLBPpV3kxGzbRQiCe-h8PvAdDa72Qkr_hHGUQj6J8_tqMJJKi8hW";
         let candidate = {};
 
-        async function startExam() {
+        function startExam() {
             const name = document.getElementById('name').value.trim();
             const discord = document.getElementById('discord').value.trim();
             const age = document.getElementById('age').value.trim();
@@ -115,36 +115,32 @@
 
             candidate = { name, discord, age, acceptor, reason };
 
-            // إرسال البيانات للويب هوك
-            try {
-                await fetch(WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        embeds: [{
-                            title: "📝 متقدم جديد بدأ اختبار الإدارة",
-                            color: 1085573,
-                            fields: [
-                                { name: "👤 الاسم", value: name, inline: true },
-                                { name: "💬 يوزر الدسكورد", value: discord, inline: true },
-                                { name: "🎂 العمر", value: age, inline: true },
-                                { name: "🛡️ مسؤول القبول", value: acceptor, inline: true },
-                                { name: "📌 سبب الدخول", value: reason, inline: false }
-                            ]
-                        }]
-                    })
-                });
-            } catch (err) {
-                console.log("Webhook error:", err);
-            }
-
-            // الانتقال الفوري للخطوة الثانية
+            // الانتقال الفوري للخطوة الثانية بدون انتظار الويب هوك لتفادي أي تعليق
             document.getElementById('step-1').classList.add('hidden');
             document.getElementById('step-2').classList.remove('hidden');
             window.scrollTo(0, 0);
+
+            // إرسال البيانات للويب هوك في الخلفية
+            fetch(WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    embeds: [{
+                        title: "📝 متقدم جديد بدأ اختبار الإدارة",
+                        color: 1085573,
+                        fields: [
+                            { name: "👤 الاسم", value: name, inline: true },
+                            { name: "💬 يوزر الدسكورد", value: discord, inline: true },
+                            { name: "🎂 العمر", value: age, inline: true },
+                            { name: "🛡️ مسؤول القبول", value: acceptor, inline: true },
+                            { name: "📌 سبب الدخول", value: reason, inline: false }
+                        ]
+                    }]
+                })
+            }).catch(err => console.log("Webhook error:", err));
         }
 
-        async function submitExam() {
+        function submitExam() {
             let score = 13; // تقدير النجاح
             const isPassed = score >= 12;
 
@@ -165,26 +161,22 @@
                 badge.innerText = "حالة الطلب: غير مقبول";
             }
 
-            try {
-                await fetch(WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        embeds: [{
-                            title: isPassed ? "🎉 نتيجة اختبار إداري - (مقبول)" : "❌ نتيجة اختبار إداري - (غير مقبول)",
-                            color: isPassed ? 1085573 : 15158332,
-                            fields: [
-                                { name: "👤 الاسم", value: candidate.name, inline: true },
-                                { name: "💬 يوزر الدسكورد", value: candidate.discord, inline: true },
-                                { name: "📊 النتيجة", value: `${score} / 17`, inline: true },
-                                { name: "🎖️ الرتبة", value: isPassed ? "Junior Support - مساعد إداري" : "غير مقبول", inline: false }
-                            ]
-                        }]
-                    })
-                });
-            } catch (err) {
-                console.log("Webhook error:", err);
-            }
+            fetch(WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    embeds: [{
+                        title: isPassed ? "🎉 نتيجة اختبار إداري - (مقبول)" : "❌ نتيجة اختبار إداري - (غير مقبول)",
+                        color: isPassed ? 1085573 : 15158332,
+                        fields: [
+                            { name: "👤 الاسم", value: candidate.name || "متقدم", inline: true },
+                            { name: "💬 يوزر الدسكورد", value: candidate.discord || "-", inline: true },
+                            { name: "📊 النتيجة", value: `${score} / 17`, inline: true },
+                            { name: "🎖️ الرتبة", value: isPassed ? "Junior Support - مساعد إداري" : "غير مقبول", inline: false }
+                        ]
+                    }]
+                })
+            }).catch(err => console.log("Webhook error:", err));
         }
     </script>
 </body>
