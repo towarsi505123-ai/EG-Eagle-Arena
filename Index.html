@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle Arena | اختبار قبول الإدارة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; background-color: #090d16; color: #f3f4f6; }
+        .glow-effect { box-shadow: 0 0 25px rgba(16, 185, 129, 0.25); }
+        .glow-text { text-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="w-full max-w-3xl bg-[#111827] border border-[#1f2937] rounded-2xl p-6 md:p-10 glow-effect relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-400"></div>
+
+        <div class="text-center mb-8">
+            <img src="https://cdn.discordapp.com/icons/1339585897175191614/449360369e070e5c7462296ff12fb3be.webp?size=4096" 
+                 alt="Eagle Arena Logo" 
+                 class="w-24 h-24 mx-auto rounded-full border-2 border-emerald-500 glow-effect object-cover mb-4">
+            <h1 class="text-3xl font-black text-white glow-text">Eagle Arena</h1>
+            <p class="text-emerald-400 font-semibold mt-1">نظام اختبار واختيار طاقم الإدارة</p>
+        </div>
+
+        <!-- الخطوة الأولى -->
+        <div id="step-1" class="space-y-5">
+            <div class="border-b border-[#1f2937] pb-4">
+                <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                    <span class="bg-emerald-500 text-gray-900 w-7 h-7 rounded-full flex items-center justify-center text-sm font-black">1</span>
+                    بيانات المتقدم الأساسية
+                </h2>
+                <p class="text-sm text-gray-400 mt-1">يرجى تعبئة جميع الحقول بدقة، سيتم إرسال بياناتك فوراً لدسكورد الإدارة.</p>
+            </div>
+
+            <form id="info-form" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-300 mb-1">الاسم الحقيقي:</label>
+                        <input type="text" id="name" required class="w-full bg-gray-900 border border-[#1f2937] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-300 mb-1">يوزر الديسكورد:</label>
+                        <input type="text" id="discord" required class="w-full bg-gray-900 border border-[#1f2937] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-300 mb-1">العمر:</label>
+                        <input type="number" id="age" required min="12" max="60" class="w-full bg-gray-900 border border-[#1f2937] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-300 mb-1">مسؤول قبولك:</label>
+                        <input type="text" id="acceptor" required class="w-full bg-gray-900 border border-[#1f2937] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-300 mb-1">سبب دخولك للإدارة:</label>
+                    <textarea id="reason" required rows="3" class="w-full bg-gray-900 border border-[#1f2937] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 text-gray-900 font-extrabold py-3.5 rounded-xl shadow-lg hover:from-emerald-500 hover:to-emerald-400 transition-all text-lg">
+                    إرسال البيانات والبدء في الاختبار 🚀
+                </button>
+            </form>
+        </div>
+
+        <!-- الخطوة الثانية (الأسئلة مخفية مؤقتاً لحين تعبئة البيانات) -->
+        <div id="step-2" class="hidden text-center py-10 text-emerald-400 font-bold">
+            جاري نقل لك لاختبار الأسئلة...
+        </div>
+
+    </div>
+
+    <script>
+        const WEBHOOK_URL = "https://discord.com/api/webhooks/1571101758938415124/hYBuyD_mM6KV3f-qiLBPpV3kxGzbRQiCe-h8PvAdDa72Qkr_hHGUQj6J8_tqMJJKi8hW";
+        
+        document.getElementById('info-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const candidateData = {
+                name: document.getElementById('name').value,
+                discord: document.getElementById('discord').value,
+                age: document.getElementById('age').value,
+                acceptor: document.getElementById('acceptor').value,
+                reason: document.getElementById('reason').value
+            };
+
+            const embed = {
+                title: "📝 متقدم جديد بدأ اختبار الإدارة",
+                color: 1085573,
+                fields: [
+                    { name: "👤 الاسم", value: candidateData.name, inline: true },
+                    { name: "💬 يوزر الدسكورد", value: candidateData.discord, inline: true },
+                    { name: "🎂 العمر", value: candidateData.age, inline: true },
+                    { name: "🛡️ مسؤول القبول", value: candidateData.acceptor, inline: true },
+                    { name: "📌 سبب الدخول", value: candidateData.reason, inline: false }
+                ],
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ embeds: [embed] })
+                });
+            } catch (err) { console.log(err); }
+
+            alert("تم إرسال بياناتك بنجاح! (يمكنك إضافة صفحة الأسئلة الكاملة لاحقاً)");
+        });
+    </script>
+</body>
+</html>
