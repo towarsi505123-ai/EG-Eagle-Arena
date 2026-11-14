@@ -54,30 +54,195 @@
             </div>
         </div>
 
-        <!-- الخطوة 2: الأسئلة -->
+        <!-- الخطوة 2: الأسئلة (17 سؤالاً كاملاً) -->
         <div id="step-2" class="hidden space-y-6">
-            <h2 class="text-xl font-bold text-white border-b border-gray-800 pb-2">2. اختبار الكفاءة الإدارية</h2>
+            <h2 class="text-xl font-bold text-white border-b border-gray-800 pb-2">2. اختبار الكفاءة الإدارية (17 سؤال)</h2>
             
-            <div class="space-y-6">
-                <!-- سؤال 1 -->
+            <div class="space-y-6" id="questions-list">
+                <!-- س1 -->
                 <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
-                    <p class="font-bold text-white mb-2">1. شخص يشتم الإدارة واللاعبين بالعام، وش تصرفك الفوري؟</p>
+                    <p class="font-bold text-white mb-2">1. لو دخل شخص للسيرفر وبدأ يسب ويشتم الإدارة واللاعبين علناً في الشات العام، وش تصرفك الفوري؟</p>
                     <div class="space-y-2 text-sm text-gray-300">
-                        <label class="block cursor-pointer"><input type="radio" name="q1" value="a"> أ) أشتمه عشان يتربى</label>
-                        <label class="block cursor-pointer"><input type="radio" name="q1" value="b"> ب) أعطيه كتم أو باند حسب اللائحة وأبلغ الإدارة بصمت</label>
-                        <label class="block cursor-pointer"><input type="radio" name="q1" value="c"> ج) أسحب عليه لين يدخل غيري</label>
-                        <label class="block cursor-pointer"><input type="radio" name="q1" value="d"> د) أتناقش معه وأسبه بالخاص</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q1" value="a"> أ) أشتمه عشان يتربى وما يعيدها.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q1" value="b"> ب) أعطيه كتم أو باند نهائي حسب اللائحة وأبلغ باقي الإدارة بالصامت.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q1" value="c"> ج) أسحب عليه وما أسوي شي لين يدخل مشرف غيري.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q1" value="d"> د) أتناقش معه وأسبه على الخاص.</label>
                     </div>
                 </div>
 
-                <!-- سؤال 2 -->
+                <!-- س2 -->
                 <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
-                    <p class="font-bold text-white mb-2">2. لاعبين تضاربوا وسبوا بعض بروم صوتي، وش الإجراء الصحيح؟</p>
+                    <p class="font-bold text-white mb-2">2. اثنين من اللاعبين تضاربوا بالكلام وتحول الموضوع لسب وقذف داخل روم صوتي، وش الإجراء الصحيح؟</p>
                     <div class="space-y-2 text-sm text-gray-300">
-                        <label class="block cursor-pointer"><input type="radio" name="q2" value="a"> أ) أعطيهم كلهم باند بدون كلام</label>
-                        <label class="block cursor-pointer"><input type="radio" name="q2" value="b"> ب) أنبههم بالهدوء وإذا استمروا كتم (Mute) وأفهم المشكلة بحيادية</label>
-                        <label class="block cursor-pointer"><input type="radio" name="q2" value="c"> ج) أشجعهم عشان يصير حماس</label>
-                        <label class="block cursor-pointer"><input type="radio" name="q2" value="d"> د) أطلع من الروم وأطنشهم</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q2" value="a"> أ) أدخل الروم وأعطيهم كلهم باند بدون كلام.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q2" value="b"> ب) أنبههم بالهدوء، وإذا استمروا أعطيهم كتم (Mute) مؤقت وأفهم المشكلة بحيادية.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q2" value="c"> ج) أشجعهم وأقولهم كملوا الفايت عشان يصير حماس.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q2" value="d"> د) أطلع من الروم وأطنشهم.</label>
+                    </div>
+                </div>
+
+                <!-- س3 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">3. إذا جاء لاعب يشتكي لك على إداري ثاني أنه ظلمه أو أعطاه باند بالغلط، كيف تتصرف؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q3" value="a"> أ) أقول له الإدارة ما تغلط واقلب وجهك.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q3" value="b"> ب) أطلب منه الدليل (صورة أو مقطع)، وأناقش الموضوع مع الإداري المعني بحيادية تامة بعيداً عن اللاعبين.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q3" value="c"> ج) ألغي الباند فوراً من نفسي بدون ما أرجع للإداري.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q3" value="d"> د) أقول له روح اشتكِ عند صاحب السيرفر وأحظر اللاعب نفسه.</label>
+                    </div>
+                </div>
+
+                <!-- س4 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">4. وش أول صفة يجب أن تتوفر في الإداري الناجح؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q4" value="a"> أ) الصبر، الحكمة، والحيادية وقت المشاكل.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q4" value="b"> ب) القوة والتحكم وصلاحيات الباند الكثيرة.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q4" value="c"> ج) كثرة التواجد فقط بدون تفاعل.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q4" value="d"> د) مساعدة أصحابه وخاصة أصدقائه المقربين باللعبة.</label>
+                    </div>
+                </div>
+
+                <!-- س5 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">5. لو لقيت باق أو ثغرة في الماب أو السيرفر واللاعبين قاعدين يستغلونها عشان يفوزون، وش تسوي؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q5" value="a"> أ) أستغلها معهم عشان أفوز.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q5" value="b"> ب) أبلغ الإدارة العليا فوراً وأحاول أقفل المنطقة أو أنبه اللاعبين بعدم استغلالها لين يتم حلها.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q5" value="c"> ج) أتجاهل الموضوع وكأن شيئاً لم يحدث.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q5" value="d"> د) أنشر الثغرة بالتشات العام عشان الكل يستفيد.</label>
+                    </div>
+                </div>
+
+                <!-- س6 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">6. لاعب محترف ومعروف في السيرفر تسبب بمشكلة وخالف القوانين بقوة، ولما أعطيته باند، بدأ جمهوره يضغطون عليك ومطالبين بفك الباند، وش التصرف الاحترافي؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q6" value="a"> أ) أخضع للضغط وأفك الباند عنه عشان ما أخسر اللاعبين.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q6" value="b"> ب) ألتزم بالحيادية، أرفض فك الباند إلا بالطريقة النظامية، وأوضح للجميع بكل هدوء وثبات أن القوانين تطبق على الكل.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q6" value="c"> ج) أشتم الجمهور وأعطيهم باندات جماعية.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q6" value="d"> د) أفك الباند وأقول للإدارة الثانية إن بالغلط انفك لحاله.</label>
+                    </div>
+                </div>
+
+                <!-- س7 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">7. دخل شخص استغل ثغرة معقدة في السكربتات (Fake Lag / Exploit) تخليه يفوز بدون برامج خارجية واضحة، وش أول خطوة تسويها؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q7" value="a"> أ) أعطيه باند وأنا مدري وش السالفة عشان أرتاح.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q7" value="b"> ب) أصور الشاشة (Clip)، أجمع الأدلة فوراً، أبلغ المبرمج أو الإدارة العليا بالثغرة، وأعطي باند مؤقت.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q7" value="c"> ج) أدخل معه فايت وأحاول أنتصر عليه بالقوة.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q7" value="d"> د) أتجاهله لأنه ما استعمل هكر خارجي معروف.</label>
+                    </div>
+                </div>
+
+                <!-- س8 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">8. لو صار فيه اتهامات متبادلة بين إثنين من المشرفين الكبار في روم عام أمام اللاعبين، وش ردة الفعل الفورية الصحيحة؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q8" value="a"> أ) أنحاز لصديقي منهم وأوقف ضده.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q8" value="b"> ب) أسكتهم فوراً وأسحبهم لروم خاص، أخذ لقطات شاشة، وأرفع الموضوع للإدارة العليا.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q8" value="c"> ج) أضحك عليهم وأشجعهم يكملون هواشهم بالعام.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q8" value="d"> د) أطلع من الديسكورد عشان ما أتورط.</label>
+                    </div>
+                </div>
+
+                <!-- س9 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">9. جاك شخص يبي يقدم على الإدارة وملفه نظيف، لكن أحسست من طريقة كلامه أنه "جاسوس" أو جاي يخترق السيرفر لصالح سيرفر منافس، وش تسوي؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q9" value="a"> أ) أقبله فوراً وأعطيه كل الصلاحيات عشان أختبره.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q9" value="b"> ب) أرفضه بدون سبب.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q9" value="c"> ج) أطبق عليه فترة اختبار دقيقة (Trial)، أراقبه بحذر شديد، وأعطيه صلاحيات محدودة جداً.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q9" value="d"> د) أنشر بالتشات العام إنه جاسوس.</label>
+                    </div>
+                </div>
+
+                <!-- س10 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">10. لاعب مميز ومشهور تسبب بمشكلة قوية وتم حظره، وبدأ جمهوره يضغطون عليك بالتشات لفك بنده فوراً، ما هو التصرف الأنسب؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q10" value="a"> أ) فك الباند مؤقتاً لتجنب المشاكل.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q10" value="b"> ب) تطبيق اللائحة بثبات ورفض الفك إلا عبر نظام التذاكر الرسمي بغض النظر عن الضغط.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q10" value="c"> ج) كتم جميع المعترضين في الشات ثم تجاهل الموقف.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q10" value="d"> د) إبلاغ صاحب السيرفر فوراً لتحمل المسؤولية.</label>
+                    </div>
+                </div>
+
+                <!-- س11 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">11. لو اكتشفت أن مشرفاً زميلاً لك يستغل صلاحياته ويعطي أفضليات خفية لأصدقائه، ما هو الإجراء الأولي الصحيح؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q11" value="a"> أ) مواجهته فوراً في الشات العام لتحذيره.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q11" value="b"> ب) التغاضي عن الأمر طالما لم يحدث تخريب حقيقي.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q11" value="c"> ج) توثيق الأدلة بصمت ورفع تقرير سري مباشر للإدارة العليا.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q11" value="d"> د) سحب صلاحياته بنفسك مؤقتاً.</label>
+                    </div>
+                </div>
+
+                <!-- س12 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">12. دخل شخص خبير واستغل ثغرة برمجية دقيقة تمنحه تفوقاً دون رصده بالـ Anti-cheat، ماذا تفعل كخطوة أولى؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q12" value="a"> أ) الدخول معه في فايت واختباره.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q12" value="b"> ب) تصوير الشاشة (Clip) وحفظ الأدلة، ثم منحه باند مؤقت وإبلاغ المبرمج فوراً.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q12" value="c"> ج) انتظار تبليغ اللاعبين ثم نشر تحذير.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q12" value="d"> د) تركه حتى ينهي جولته.</label>
+                    </div>
+                </div>
+
+                <!-- س13 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">13. التقى اثنان من المشرفين الكبار في روم صوتي عام وبدؤوا يتبادلون الاتهامات بالفساد، ما هو التصرف الفوري؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q13" value="a"> أ) التدخل ومناصرة الطرف الأحق.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q13" value="b"> ب) سحب الاثنين فوراً لروم خاص، توثيق المخالفة، ورفع تقرير تأديبي للإدارة العليا.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q13" value="c"> ج) مغادرة الروم والصمت تماماً.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q13" value="d"> د) إعطاء الطرفين كتم فوري.</label>
+                    </div>
+                </div>
+
+                <!-- س14 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">14. أثناء بطولة كبرى ومباشرة، اكتشفت أن الفريق الفائز استغل ثغرة طفيفة غير مرئية أثرت على النتيجة. ما هو التصرف الإداري الأصح؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q14" value="a"> أ) استكمال التتويج ومعاقبة الفريق سراً في اليوم التالي.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q14" value="b"> ب) إيقاف المباراة فوراً، إعلان وجود خلل تقني، إعادة الجولة بعد رتق الثغرة، وفرض إنذار رسمي.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q14" value="c"> ج) تجاهل الثغرة طالما الجمهور لم يلاحظ.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q14" value="d"> د) إلغاء البطولة بالكامل.</label>
+                    </div>
+                </div>
+
+                <!-- س15 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">15. قام مؤثر ضخم بمخالفة تستوجب الحظر النهائي، وهدد بنشر فيديو يدمر سمعة السيرفر إن لم يُفك بنده. ما هي الاستراتيجية الأمتن؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q15" value="a"> أ) الرضوخ المؤقت لطلب الفك لحين انتهاء حملته.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q15" value="b"> ب) الرفض القاطع، إصدار بيان رسمي موثق بالأدلة يوضح أسباب الحظر بكل شفافية.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q15" value="c"> ج) التواصل معه في الخفاء وتقديم تنازلات.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q15" value="d"> د) حظر كل من يتداول المقطع.</label>
+                    </div>
+                </div>
+
+                <!-- س16 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">16. وردتك شكوى سرية وموثقة أن رئيس الإدارة يبيع رتباً سراً، ومالك السيرفر مسافر. ما هو التصرّف البرتوكولي الصحيح؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q16" value="a"> أ) مواجهة رئيس الإدارة علناً ومطالبته بتسليم الصلاحيات.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q16" value="b"> ب) إرسال تقرير شامل ومفصل بالأدلة حصرياً لمالك السيرفر عبر رسالة خاصة، والانتظار لتوجيهه.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q16" value="c"> ج) نشر الأدلة في الشات العام للإدارة.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q16" value="d"> د) تجاهل الأمر تماماً لعدم امتلاك صلاحية إيقافه.</label>
+                    </div>
+                </div>
+
+                <!-- س17 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">17. ظهر سكربت جديد لمحاكاة "اللاق الوهمي" (Fake Lag) وأفضل 5 لاعبين يستخدمونه. حظرهم يفرغ السيرفر، وتركهم يقتل المنافسة. كيف تحل المعضلة؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q17" value="a"> أ) تعديل إعدادات الاتصال العامة للسيرفر لرفع الحد الأدنى وفصل المتلاعبين تلقائياً مع تحديث أمني.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q17" value="b"> ب) غض الطرف عن اللاعبين الكبار وملاحقة الجدد فقط.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q17" value="c"> ج) إعطاء الكبار تحذيراً شفهياً على الخاص.</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q17" value="d"> د) إغلاق وضع الـ PvP بالكامل.</label>
                     </div>
                 </div>
             </div>
@@ -101,6 +266,14 @@
         const WEBHOOK_URL = "https://discord.com/api/webhooks/1571101758938415124/hYBuyD_mM6KV3f-qiLBPpV3kxGzbRQiCe-h8PvAdDa72Qkr_hHGUQj6J8_tqMJJKi8hW";
         let candidate = {};
 
+        // الإجابات الصحيحة للـ 17 سؤالاً
+        const correctAnswers = {
+            q1: 'b', q2: 'b', q3: 'b', q4: 'a', q5: 'b',
+            q6: 'b', q7: 'b', q8: 'b', q9: 'c', q10: 'b',
+            q11: 'c', q12: 'b', q13: 'b', q14: 'b', q15: 'b',
+            q16: 'b', q17: 'a'
+        };
+
         function startExam() {
             const name = document.getElementById('name').value.trim();
             const discord = document.getElementById('discord').value.trim();
@@ -115,12 +288,10 @@
 
             candidate = { name, discord, age, acceptor, reason };
 
-            // الانتقال الفوري للخطوة الثانية بدون انتظار الويب هوك لتفادي أي تعليق
             document.getElementById('step-1').classList.add('hidden');
             document.getElementById('step-2').classList.remove('hidden');
             window.scrollTo(0, 0);
 
-            // إرسال البيانات للويب هوك في الخلفية
             fetch(WEBHOOK_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -137,11 +308,19 @@
                         ]
                     }]
                 })
-            }).catch(err => console.log("Webhook error:", err));
+            }).catch(err => console.log(err));
         }
 
         function submitExam() {
-            let score = 13; // تقدير النجاح
+            let score = 0;
+            for (let q in correctAnswers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                if (selected && selected.value === correctAnswers[q]) {
+                    score++;
+                }
+            }
+
+            // شرط النجاح: أكثر من 11 (يعني 12 فأكثر من 17)
             const isPassed = score >= 12;
 
             document.getElementById('step-2').classList.add('hidden');
@@ -149,8 +328,8 @@
             window.scrollTo(0, 0);
 
             document.getElementById('result-icon').innerText = isPassed ? "🏆" : "❌";
-            document.getElementById('result-title').innerText = isPassed ? "مبروك! لقد اجتازت الاختبار بنجاح" : "عذراً لم تتخطَ الاختبار";
-            document.getElementById('result-desc').innerHTML = `نتيجة اختبارك: <span class="text-emerald-400 font-bold">${score} / 17</span>`;
+            document.getElementById('result-title').innerText = isPassed ? "مبروك! لقد اجتازت الاختبار بنجاح" : "عذراً لم تتخطَ درجة النجاح";
+            document.getElementById('result-desc').innerHTML = `نتيجة اختبارك: <span class="text-emerald-400 font-bold">${score} / 17</span> (الحد الأدنى للقبول 12 درجة)`;
             
             const badge = document.getElementById('rank-badge');
             if(isPassed) {
@@ -171,12 +350,12 @@
                         fields: [
                             { name: "👤 الاسم", value: candidate.name || "متقدم", inline: true },
                             { name: "💬 يوزر الدسكورد", value: candidate.discord || "-", inline: true },
-                            { name: "📊 النتيجة", value: `${score} / 17`, inline: true },
-                            { name: "🎖️ الرتبة", value: isPassed ? "Junior Support - مساعد إداري" : "غير مقبول", inline: false }
+                            { name: "📊 النتيجة النهائية", value: `${score} / 17`, inline: true },
+                            { name: "🎖️ الرتبة والحالة", value: isPassed ? "مقبول (Junior Support - مساعد إداري)" : "غير مقبول", inline: false }
                         ]
                     }]
                 })
-            }).catch(err => console.log("Webhook error:", err));
+            }).catch(err => console.log(err));
         }
     </script>
 </body>
