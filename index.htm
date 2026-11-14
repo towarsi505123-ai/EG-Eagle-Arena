@@ -58,7 +58,7 @@
         <div id="step-2" class="hidden space-y-6">
             <h2 class="text-xl font-bold text-white border-b border-gray-800 pb-2">2. اختبار الكفاءة الإدارية (17 سؤال)</h2>
             
-            <div class="space-y-6" id="questions-list">
+            <div class="space-y-6">
                 <!-- س1 -->
                 <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
                     <p class="font-bold text-white mb-2">1. لو دخل شخص للسيرفر وبدأ يسب ويشتم الإدارة واللاعبين علناً في الشات العام، وش تصرفك الفوري؟</p>
@@ -247,7 +247,7 @@
                 </div>
             </div>
 
-            <button type="button" onclick="submitExam()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-black py-4 rounded-xl transition-all text-lg shadow-lg cursor-pointer">
+            <button type="button" onclick="submitExam()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-black py-4 rounded-xl transition-all text-lg shadow-lg cursor-pointer mt-6">
                 إنهاء الاختبار وإرسال النتيجة 🎯
             </button>
         </div>
@@ -266,7 +266,6 @@
         const WEBHOOK_URL = "https://discord.com/api/webhooks/1571101758938415124/hYBuyD_mM6KV3f-qiLBPpV3kxGzbRQiCe-h8PvAdDa72Qkr_hHGUQj6J8_tqMJJKi8hW";
         let candidate = {};
 
-        // الإجابات الصحيحة للـ 17 سؤالاً
         const correctAnswers = {
             q1: 'b', q2: 'b', q3: 'b', q4: 'a', q5: 'b',
             q6: 'b', q7: 'b', q8: 'b', q9: 'c', q10: 'b',
@@ -320,7 +319,6 @@
                 }
             }
 
-            // شرط النجاح: أكثر من 11 (يعني 12 فأكثر من 17)
             const isPassed = score >= 12;
 
             document.getElementById('step-2').classList.add('hidden');
