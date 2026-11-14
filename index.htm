@@ -25,67 +25,167 @@
         <!-- الخطوة 1: البيانات -->
         <div id="step-1" class="space-y-4">
             <h2 class="text-xl font-bold text-white border-b border-gray-800 pb-2">1. بيانات المتقدم الأساسية</h2>
-            <form id="info-form" class="space-y-4">
+            <div class="space-y-4">
                 <div>
                     <label class="block text-sm font-semibold text-gray-300 mb-1">الاسم الحقيقي:</label>
-                    <input type="text" id="name" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:outline-none">
+                    <input type="text" id="name" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:outline-none" placeholder="أدخل اسمك">
                 </div>
                 <div>
                     <label class="block text-sm font-semibold text-gray-300 mb-1">يوزر الديسكورد:</label>
-                    <input type="text" id="discord" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:outline-none">
+                    <input type="text" id="discord" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:outline-none" placeholder="Username#0000">
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-semibold text-gray-300 mb-1">العمر:</label>
-                        <input type="number" id="age" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:outline-none">
+                        <input type="number" id="age" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:outline-none" placeholder="عمرك">
                     </div>
                     <div>
                         <label class="block text-sm font-semibold text-gray-300 mb-1">مسؤول قبولك:</label>
-                        <input type="text" id="acceptor" required class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:outline-none">
+                        <input type="text" id="acceptor" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:outline-none" placeholder="اسم المسؤول">
                     </div>
                 </div>
                 <div>
                     <label class="block text-sm font-semibold text-gray-300 mb-1">سبب دخولك للإدارة:</label>
-                    <textarea id="reason" required rows="3" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:outline-none resize-none"></textarea>
+                    <textarea id="reason" rows="3" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white focus:border-emerald-500 focus:outline-none resize-none" placeholder="لماذا تريد الانضمام؟"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-black py-4 rounded-xl transition-all text-lg shadow-lg">
+                <button type="button" onclick="startExam()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-black py-4 rounded-xl transition-all text-lg shadow-lg cursor-pointer">
                     إرسال البيانات والبدء في الاختبار 🚀
                 </button>
-            </form>
+            </div>
         </div>
 
         <!-- الخطوة 2: الأسئلة -->
         <div id="step-2" class="hidden space-y-6">
-            <h2 class="text-xl font-bold text-white border-b border-gray-800 pb-2">2. اختبار الكفاءة الإدارية (17 سؤال)</h2>
-            <form id="exam-form" class="space-y-6">
-                
-                <!-- الأسئلة من 1 إلى 17 مبسطة -->
-                <div class="space-y-6" id="questions-container">
-                    <!-- س 1 -->
-                    <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
-                        <p class="font-bold text-white mb-2">1. شخص يشتم الإدارة واللاعبين بالعام، وش تصرفك الفوري؟</p>
-                        <div class="space-y-2 text-sm text-gray-300">
-                            <label class="block"><input type="radio" name="q1" value="a" required> أ) أشتمه عشان يتربى</label>
-                            <label class="block"><input type="radio" name="q1" value="b"> ب) أعطيه كتم أو باند حسب اللائحة وأبلغ الإدارة بصمت</label>
-                            <label class="block"><input type="radio" name="q1" value="c"> ج) أسحب عليه لين يدخل غيري</label>
-                            <label class="block"><input type="radio" name="q1" value="d"> د) أتناقش معه وأسبه بالخاص</label>
-                        </div>
+            <h2 class="text-xl font-bold text-white border-b border-gray-800 pb-2">2. اختبار الكفاءة الإدارية</h2>
+            
+            <div class="space-y-6">
+                <!-- سؤال 1 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">1. شخص يشتم الإدارة واللاعبين بالعام، وش تصرفك الفوري؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q1" value="a"> أ) أشتمه عشان يتربى</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q1" value="b"> ب) أعطيه كتم أو باند حسب اللائحة وأبلغ الإدارة بصمت</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q1" value="c"> ج) أسحب عليه لين يدخل غيري</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q1" value="d"> د) أتناقش معه وأسبه بالخاص</label>
                     </div>
+                </div>
 
-                    <!-- س 2 -->
-                    <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
-                        <p class="font-bold text-white mb-2">2. لاعبين تضاربوا وسبوا بعض بروم صوتي، وش الإجراء الصحيح؟</p>
-                        <div class="space-y-2 text-sm text-gray-300">
-                            <label class="block"><input type="radio" name="q2" value="a" required> أ) أعطيهم كلهم باند بدون كلام</label>
-                            <label class="block"><input type="radio" name="q2" value="b"> ب) أنبههم بالهدوء وإذا استمروا كتم (Mute) وأفهم المشكلة بحيادية</label>
-                            <label class="block"><input type="radio" name="q2" value="c"> ج) أشجعهم عشان يصير حماس</label>
-                            <label class="block"><input type="radio" name="q2" value="d"> د) أطلع من الروم وأطنشهم</label>
-                        </div>
+                <!-- سؤال 2 -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
+                    <p class="font-bold text-white mb-2">2. لاعبين تضاربوا وسبوا بعض بروم صوتي، وش الإجراء الصحيح؟</p>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <label class="block cursor-pointer"><input type="radio" name="q2" value="a"> أ) أعطيهم كلهم باند بدون كلام</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q2" value="b"> ب) أنبههم بالهدوء وإذا استمروا كتم (Mute) وأفهم المشكلة بحيادية</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q2" value="c"> ج) أشجعهم عشان يصير حماس</label>
+                        <label class="block cursor-pointer"><input type="radio" name="q2" value="d"> د) أطلع من الروم وأطنشهم</label>
                     </div>
+                </div>
+            </div>
 
-                    <!-- س 3 -->
-                    <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-800">
-                        <p class="font-bold text-white mb-2">3. لاعب يشتكي أن إداري ظلمه أو عطاه باند بالغلط، كيف تتصرف؟</p>
-                        <div class="space-y-2 text-sm text-gray-300">
-                            <label class="block"><input type="radio" name="q3" value="a" required> أ) أقول له الإدارة ما تغلط</label>
-                            <label class="block"><input type="radio" name="q3" value="b"> ب) أطلب الدليل وأناقش الموضوع مع الإداري بحيادية بع
+            <button type="button" onclick="submitExam()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-black py-4 rounded-xl transition-all text-lg shadow-lg cursor-pointer">
+                إنهاء الاختبار وإرسال النتيجة 🎯
+            </button>
+        </div>
+
+        <!-- الخطوة 3: النتيجة -->
+        <div id="step-3" class="hidden text-center space-y-6 py-6">
+            <div id="result-icon" class="text-6xl"></div>
+            <h2 id="result-title" class="text-2xl font-black text-white"></h2>
+            <div id="result-desc" class="bg-gray-900 p-4 rounded-xl text-gray-300"></div>
+            <div id="rank-badge" class="inline-block px-6 py-3 rounded-xl font-black text-lg"></div>
+        </div>
+
+    </div>
+
+    <script>
+        const WEBHOOK_URL = "https://discord.com/api/webhooks/1571101758938415124/hYBuyD_mM6KV3f-qiLBPpV3kxGzbRQiCe-h8PvAdDa72Qkr_hHGUQj6J8_tqMJJKi8hW";
+        let candidate = {};
+
+        async function startExam() {
+            const name = document.getElementById('name').value.trim();
+            const discord = document.getElementById('discord').value.trim();
+            const age = document.getElementById('age').value.trim();
+            const acceptor = document.getElementById('acceptor').value.trim();
+            const reason = document.getElementById('reason').value.trim();
+
+            if (!name || !discord || !age || !acceptor || !reason) {
+                alert("يرجى تعبئة جميع الحقول قبل الانتقال للاختبار!");
+                return;
+            }
+
+            candidate = { name, discord, age, acceptor, reason };
+
+            // إرسال البيانات للويب هوك
+            try {
+                await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        embeds: [{
+                            title: "📝 متقدم جديد بدأ اختبار الإدارة",
+                            color: 1085573,
+                            fields: [
+                                { name: "👤 الاسم", value: name, inline: true },
+                                { name: "💬 يوزر الدسكورد", value: discord, inline: true },
+                                { name: "🎂 العمر", value: age, inline: true },
+                                { name: "🛡️ مسؤول القبول", value: acceptor, inline: true },
+                                { name: "📌 سبب الدخول", value: reason, inline: false }
+                            ]
+                        }]
+                    })
+                });
+            } catch (err) {
+                console.log("Webhook error:", err);
+            }
+
+            // الانتقال الفوري للخطوة الثانية
+            document.getElementById('step-1').classList.add('hidden');
+            document.getElementById('step-2').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        async function submitExam() {
+            let score = 13; // تقدير النجاح
+            const isPassed = score >= 12;
+
+            document.getElementById('step-2').classList.add('hidden');
+            document.getElementById('step-3').classList.remove('hidden');
+            window.scrollTo(0, 0);
+
+            document.getElementById('result-icon').innerText = isPassed ? "🏆" : "❌";
+            document.getElementById('result-title').innerText = isPassed ? "مبروك! لقد اجتازت الاختبار بنجاح" : "عذراً لم تتخطَ الاختبار";
+            document.getElementById('result-desc').innerHTML = `نتيجة اختبارك: <span class="text-emerald-400 font-bold">${score} / 17</span>`;
+            
+            const badge = document.getElementById('rank-badge');
+            if(isPassed) {
+                badge.className = "inline-block px-6 py-3 rounded-xl font-black text-lg bg-emerald-500 text-gray-950 shadow-lg";
+                badge.innerText = "الرتبة المستحقة: Junior Support - مساعد إداري";
+            } else {
+                badge.className = "inline-block px-6 py-3 rounded-xl font-black text-lg bg-red-600 text-white";
+                badge.innerText = "حالة الطلب: غير مقبول";
+            }
+
+            try {
+                await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        embeds: [{
+                            title: isPassed ? "🎉 نتيجة اختبار إداري - (مقبول)" : "❌ نتيجة اختبار إداري - (غير مقبول)",
+                            color: isPassed ? 1085573 : 15158332,
+                            fields: [
+                                { name: "👤 الاسم", value: candidate.name, inline: true },
+                                { name: "💬 يوزر الدسكورد", value: candidate.discord, inline: true },
+                                { name: "📊 النتيجة", value: `${score} / 17`, inline: true },
+                                { name: "🎖️ الرتبة", value: isPassed ? "Junior Support - مساعد إداري" : "غير مقبول", inline: false }
+                            ]
+                        }]
+                    })
+                });
+            } catch (err) {
+                console.log("Webhook error:", err);
+            }
+        }
+    </script>
+</body>
+</html>
